@@ -10,8 +10,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// every single time set state calc BMI
-
 var BMIApp = function (_React$Component) {
     _inherits(BMIApp, _React$Component);
 
@@ -56,17 +54,15 @@ var BMIApp = function (_React$Component) {
             }
 
             this.setState({
-                BMI: BMI
-            });
-
-            this.setState({
-                description: description
+                BMI: BMI, description: description
             });
         }
     }, {
         key: 'handleChange',
         value: function handleChange(event) {
             this.setState(_defineProperty({}, event.target.name, event.target.value));
+
+            // this.calcBMI();
         }
     }, {
         key: 'handleSubmit',
@@ -82,9 +78,27 @@ var BMIApp = function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'h1',
+                    'div',
                     { id: 'title' },
-                    'BMI Calculator'
+                    React.createElement(
+                        'div',
+                        { id: 'heading' },
+                        React.createElement('i', { className: 'far fa-heart' }),
+                        React.createElement(
+                            'div',
+                            { id: 'titles' },
+                            React.createElement(
+                                'h1',
+                                null,
+                                'BMI'
+                            ),
+                            React.createElement(
+                                'h2',
+                                null,
+                                'Calculator'
+                            )
+                        )
+                    )
                 ),
                 React.createElement(
                     'div',
@@ -105,11 +119,17 @@ var BMIApp = function (_React$Component) {
                         React.createElement(
                             'label',
                             { id: 'weight', className: 'label' },
-                            'Weight (lbs)'
+                            'Weight ',
+                            React.createElement(
+                                'span',
+                                { className: 'lbs' },
+                                '(lbs)'
+                            )
                         ),
                         React.createElement('input', {
                             type: 'number',
                             name: 'weight',
+                            required: true,
                             value: this.state.weight,
                             onChange: this.handleChange })
                     ),
@@ -118,26 +138,41 @@ var BMIApp = function (_React$Component) {
                         { id: 'height', className: 'label' },
                         'Height'
                     ),
-                    React.createElement('input', {
-                        type: 'number',
-                        name: 'feet',
-                        value: this.state.feet,
-                        onChange: this.handleChange }),
                     React.createElement(
-                        'span',
-                        { className: 'metric' },
-                        '(ft)'
-                    ),
-                    React.createElement('label', { id: 'inches' }),
-                    React.createElement('input', {
-                        type: 'number',
-                        name: 'inches',
-                        value: this.state.inches,
-                        onChange: this.handleChange }),
-                    React.createElement(
-                        'span',
-                        { className: 'metric' },
-                        '(in)'
+                        'div',
+                        { id: 'heightFtIn' },
+                        React.createElement(
+                            'div',
+                            { className: 'feetInches ft' },
+                            React.createElement(
+                                'span',
+                                { className: 'metric' },
+                                '(ft)'
+                            ),
+                            React.createElement('input', {
+                                type: 'number',
+                                name: 'feet',
+                                required: true,
+                                value: this.state.feet,
+                                onChange: this.handleChange })
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'feetInches in' },
+                            React.createElement(
+                                'span',
+                                { className: 'metric' },
+                                '(in)'
+                            ),
+                            React.createElement('input', {
+                                type: 'number',
+                                name: 'inches',
+                                required: true,
+                                max: '11',
+                                min: '0',
+                                value: this.state.inches,
+                                onChange: this.handleChange })
+                        )
                     ),
                     React.createElement('input', { id: 'submit', type: 'submit', value: 'Submit' })
                 )

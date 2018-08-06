@@ -1,48 +1,70 @@
 
-html {
-    box-sizing: border-box;
-}
 
 body {
-    /* background-color: rgb(34, 33, 33); */
     background-color: #DFCBBF;
     color: #41B5C0;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 18px;
+   
 }
 
 #app {
     border: 10px solid rgba(182, 252, 234, 0.808);
-    padding: 25px;
+    
     width: 300px;
     margin: 100px auto;
     background-color: #A0E0D1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0px 0px 10px rgba(172, 170, 170, 0.5);
+}
+
+form {
+    padding: 25px;
 }
 
 #BMICalculation {
-    font-size: 78px;
+    font-size: 58px;
+    margin-top: 25px;
 }
 
 #title {
-    font-size: 40px;
+    color:  rgb(182, 252, 234);
+    background-color: #41B5C0;
+    padding: 10px; 
 }
+
+h1 {
+    font-size: 60px;
+    margin: 0;
+    letter-spacing: 9px;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0;
+}
+
 
 input {
     margin-bottom: 30px;
-    background-color:  rgba(182, 252, 234, 0.589);
-    color: rgb(222, 253, 245);
-    border: none;
+    color: rgb(182, 252, 234);
+    border: 3px solid rgb(182, 252, 234);
+    background-color: #A0E0D1;
     font-size: 28px;
-    padding: 5px;
+    height: 40px;
     font-family: 'Montserrat', sans-serif;
-    width: 100px;
+    width: 100%;
     text-align: center;
+    padding: 0;
+    box-sizing: border-box;
+    
 }
 
-#BMIdescription {
-    padding: 25px;
-    
+input:focus {
+    border: 3px solid #41B5C0;
+    outline: none;
 }
 
 #submit {
@@ -51,31 +73,62 @@ input {
     letter-spacing: 4px;
     padding: 10px 5px;
     background-color: #F8B285;
-    color: rgb(253, 218, 196);
+    color: rgb(253, 232, 219);
     font-size: 18px;
+    line-height: 18px;
+    border: 3px solid #F8B285;
+    
 }
 
 #height {
-    
     display: block;
-}
-
-.metric {
-    /* background-color: #41B5C0;
-    color: rgba(182, 252, 234, 0.808); */
-    display: inline-block;
-    color: rgb(182, 252, 234);
-    border: 1px solid rgb(182, 252, 234);
-    line-height: 38px;
-    height: 1;
-    
-}
-
-.label {
-    color: rgb(182, 252, 234);
-    border: 1px solid rgb(182, 252, 234);
-    display: block;
-    padding: 5px;
     margin-bottom: 5px;
 }
 
+.metric {
+    display: block;
+    font-size: 16px;
+    color: rgb(153, 211, 197);
+    background-color: rgb(182, 252, 234);
+}
+
+.label {
+    background-color: rgb(182, 252, 234);
+    color: rgb(153, 211, 197);
+    display: block;
+    padding: 5px;
+    
+}
+
+.feetInches {
+    width: 49%;
+    float: left;
+}
+
+.ft {
+    margin-right: 2%;
+}
+
+.fa-heart {
+    font-size: 50px;
+    border: 5px solid rgb(182, 252, 234);
+    padding: 6px;
+    display: inline-block;
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 15px; 
+}
+
+#titles {
+    display: inline-block;
+    float: right;
+}
+
+#heading {
+    width: 240px;
+    margin: 0 auto;
+    height: 100px;
+}
+
+/* #ECD9C9; */
